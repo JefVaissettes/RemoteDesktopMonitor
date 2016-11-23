@@ -28,28 +28,138 @@ namespace RDMService
 
         #region IServiceRDM Membres
 
+        /// <summary>
+        /// Permet de se loguer au WebService
+        /// </summary>
+        /// <param name="p">Dictionnaire contenant votre identifiant</param>
+        /// <returns>Valeurs de retour contenant votre mot de passe. Il sera nécessaire pour le Logout et l'écriture de vos données</returns>
         public WSR_Result Login(WSR_Params p)
         {
+            string pseudo = null;
+            //string password = null;            
+            WSR_Result ret = null;
+
+            ret = VerifParamType(p, "pseudo", out pseudo);
+            if (ret != null)
+            {
+                return ret;
+            }
+
             return null;
         }
 
+        /// <summary>
+        /// Permet de se Déloguer du WebService
+        /// </summary>
+        /// <param name="p">Dictionnaire contenant votre identifiant et votre mot de passe></param>
+        /// <returns>Valeurs de retour</returns>
         public WSR_Result Logout(WSR_Params p)
         {
+            string pseudo = null;
+            string password = null;            
+            WSR_Result ret = null;
+
+            ret = VerifParamType(p, "pseudo", out pseudo);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamType(p, "password", out password);
+            if (ret != null)
+            {
+                return ret;
+            }
             return null;
         }
 
+        /// <summary>
+        /// Permet d'obtenir la liste des utilisateurs logués au WebService
+        /// </summary>
+        /// <param name="p">Dictionnaire contenant votre identifiant et votre mot de passe</param>
+        /// <returns>Valeurs de retour contenant la liste des utilisateurs connectés</returns>
         public WSR_Result GetPseudos(WSR_Params p)
         {
+            string pseudo = null;
+            string password = null;
+            WSR_Result ret = null;
+
+            ret = VerifParamType(p, "pseudo", out pseudo);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamType(p, "password", out password);
+            if (ret != null)
+            {
+                return ret;
+            }
             return null;
         }
 
+        /// <summary>
+        /// Permet d'écrire des données associées à votre compte utilisateur
+        /// </summary>
+        /// <param name="p">Dictionnaire contenant votre identifiant, votre mot de passe et les données à écrire</param>
+        /// <returns>Valeurs de retour</returns>
         public WSR_Result UploadData(WSR_Params p)
         {
+            string pseudo = null;
+            string password = null;
+            Object data = null;
+            WSR_Result ret = null;
+
+            ret = VerifParamType(p, "pseudo", out pseudo);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamType(p, "password", out password);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamExist(p, "data", out data);
+                if(ret != null)
+            {
+                return ret;
+            }
             return null;
         }
 
+        /// <summary>
+        /// Permet d'écrire des données associées à votre compte utilisateur
+        /// </summary>
+        /// <param name="p">Dictionnaire contenant votre identifiant, votre mot de passe et les données à écrire</param>
+        /// <returns>Valeurs de retour</returns>
         public WSR_Result DownloadData(WSR_Params p)
         {
+            string pseudo = null;
+            string password = null;
+            string pseudoDownload = null;
+            WSR_Result ret = null;
+
+            ret = VerifParamType(p, "pseudo", out pseudo);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamType(p, "password", out password);
+            if (ret != null)
+            {
+                return ret;
+            }
+
+            ret = VerifParamType(p, "pseudoDownload", out pseudoDownload);
+            if (ret != null)
+            {
+                return ret;
+            }
+
             return null;
         }
 
