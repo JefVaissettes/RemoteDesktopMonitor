@@ -17,33 +17,52 @@ namespace ConsumeWebServiceRest
         Json = 1,
     }
 
+    /// <summary>
+    /// Cette classe permet d'appeler un service REST en asynchrone. C'est la méthode POST qui est utilisée pour l'appel du service.
+    /// L'échange de données se fait soit en Xml soit en Json.
+    /// </summary>
     public static class ConsumeWSR
     {
+        /// <summary>
+        /// Appel d'un Service REST qui retourne un objet de type WSR_Result en réponse. Cette opération peut être annulée
+        /// </summary>
+        /// <param name="adresseService"></param>
+        /// <param name="parametres"></param>
+        /// <param name="typeSerializer"></param>
+        /// <param name="cancel"></param>
+        /// <returns>Objet retourné par le service ou Erreur, de type WSR_Result</returns>
         public static async Task<WSR_Result> Call(string adresseService, WSR_Params parametres, TypeSerializer typeSerializer, CancellationToken cancel)
         {
             try
             {
+                // Création de l'instance HttpClient avec Timeout infini car c'est le CancellationToken qui gère l'arrêt ou le TimeOut de la tâche
+                // ATTENTION, en Windows phone on a quand même un timeout au bout de 60s
                 using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
                 {
+                    // Permet de supprimer la mise en cache. En WindowsPhone, deux requêtes successives identiques retournent le résultat de la première 
+                    // qui a été mis en cache
                     client.DefaultRequestHeaders.IfModifiedSince = DateTimeOffset.Now;
 
+                    // Appel du service Rest (en asynchrone)
                     using (StringContent contentParametres = SerializeParam(parametres, typeSerializer))
                     {
                         using (HttpResponseMessage wcfResponse = await client.PostAsync(adresseService, contentParametres, cancel))
                         {
                             if (wcfResponse.IsSuccessStatusCode)
                             {
+                                // Désérialisation de la réponse du service
                                 return DeserializeHttpContent(wcfResponse.Content, typeSerializer);
                             }
                             else
                             {
+                                // ATTENTION en Windows phone on a une erreur 404 au bout de 60s même avec le timeout 'Timeout.Infinite'
                                 return new WSR_Result(WSR_Result.CodeRet_AppelService, string.Format(Properties.Resources.ERREUR_APPELSERVICE, wcfResponse.ReasonPhrase));
                             }
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) // Erreur d'annulation, de sérialisation/désérialisation ou d'appel au service REST ...
             {
                 if(ex is TaskCanceledException) { return new WSR_Result(WSR_Result.CodeRet_TimeOutAnnul, string.Format(Properties.Resources.ERREUR_TIMEOUT, adresseService)); }
                 else if (ex is SerializationException) { return new WSR_Result(WSR_Result.CodeRet_Serialize, String.Format(Properties.Resources.ERREUR_SERIALISATIONPARAMS)); }
@@ -51,6 +70,12 @@ namespace ConsumeWebServiceRest
             }
         }
 
+        /// <summary>
+        /// Cette méthode permet de sérialiser un objet
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="typeSerializer"></param>
+        /// <returns>Objet sérialisé</returns>
         private static StringContent SerializeParam(WSR_Params param, TypeSerializer typeSerializer)
         {
             try

@@ -133,9 +133,9 @@
     <value>Le temps est écoulé, relancer votre application.</value>
   </data>
   <data name="SERIALISATION_JSON" xml:space="preserve">
-    <value>Sérialisation des données en Json.</value>
+    <value>application/json</value>
   </data>
   <data name="SERIALISATION_XML" xml:space="preserve">
-    <value>Sérialisation des données en Xml.</value>
+    <value>application/xml</value>
   </data>
 </root>
