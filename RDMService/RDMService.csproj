@@ -105,12 +105,10 @@
     <Compile Include="ServiceRDM.svc.cs">
       <DependentUpon>ServiceRDM.svc</DependentUpon>
     </Compile>
-    <Compile Include="IServiceRDM.cs" />
+    <Compile Include="Contrat\IServiceRDM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

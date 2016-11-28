@@ -20,7 +20,6 @@ namespace ConsumeWebServiceRest
         public const int CodeRet_Serialize = 202;
         [DataMember]
         public const int CodeRet_Deserialize = 203;
-
         [DataMember]
         private string _data;
         [DataMember]

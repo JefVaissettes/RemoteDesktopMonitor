@@ -89,7 +89,7 @@ namespace RDMService
             switch (err)
             {
                 case AccountError.Ok:
-                    return new WSR_Result(password, true);
+                    return new WSR_Result();
 
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
@@ -136,7 +136,7 @@ namespace RDMService
             switch (err)
             {
                 case AccountError.Ok:
-                    return new WSR_Result(password, true);
+                    return new WSR_Result(listPseudos, true);
 
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
@@ -190,7 +190,7 @@ namespace RDMService
             switch (err)
             {
                 case AccountError.Ok:
-                    return new WSR_Result(password, true);
+                    return new WSR_Result();
 
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
