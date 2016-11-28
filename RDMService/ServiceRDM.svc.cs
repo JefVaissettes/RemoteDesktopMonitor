@@ -36,7 +36,7 @@ namespace RDMService
         public WSR_Result Login(WSR_Params p)
         {
             string pseudo = null;
-            //string password = null;            
+            string password = null;            
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
@@ -44,8 +44,22 @@ namespace RDMService
             {
                 return ret;
             }
+            AccountError err = Account.Add(pseudo, out password);
 
-            return null;
+            switch (err)
+            {
+                case AccountError.Ok:
+                    return new WSR_Result(password, true);
+
+                case AccountError.KeyNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);                    
+
+                case AccountError.KeyExist:
+                    return new WSR_Result(CODE_PSEUDOUTILISE, Properties.Resources.PSEUDOUTILISE);
+
+                default:
+                    return new WSR_Result(CODERET_EURREURINTERNESERVICE, Properties.Resources.EURREURINTERNESERVICE);                    
+            }
         }
 
         /// <summary>
@@ -70,7 +84,28 @@ namespace RDMService
             {
                 return ret;
             }
-            return null;
+            AccountError err = Account.Remove(pseudo,password);
+
+            switch (err)
+            {
+                case AccountError.Ok:
+                    return new WSR_Result(password, true);
+
+                case AccountError.KeyNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
+
+                case AccountError.keyNotFound:
+                    return new WSR_Result(CODERET_LOGOUT, Properties.Resources.LOGOUT);
+                                    
+                case AccountError.PasswordNullOrEmpty:
+                    return new WSR_Result(CODERET_PASSWORDOBLIGATOIRE, Properties.Resources.PASSWORDOBLIGATOIRE);
+
+                case AccountError.PasswordWrong:
+                    return new WSR_Result(CODERET_PASSWORDINCORECT, Properties.Resources.PASSWORDINCORECT);
+
+                default:
+                    return new WSR_Result(CODERET_EURREURINTERNESERVICE, Properties.Resources.EURREURINTERNESERVICE);
+            }
         }
 
         /// <summary>
@@ -82,6 +117,7 @@ namespace RDMService
         {
             string pseudo = null;
             string password = null;
+            List<string> listPseudos = null;
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
@@ -95,7 +131,28 @@ namespace RDMService
             {
                 return ret;
             }
-            return null;
+            AccountError err = Account.GetKeys(pseudo, password, out listPseudos);
+
+            switch (err)
+            {
+                case AccountError.Ok:
+                    return new WSR_Result(password, true);
+
+                case AccountError.KeyNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
+
+                case AccountError.keyNotFound:
+                    return new WSR_Result(CODERET_LOGOUT, Properties.Resources.LOGOUT);
+
+                case AccountError.PasswordNullOrEmpty:
+                    return new WSR_Result(CODERET_PASSWORDOBLIGATOIRE, Properties.Resources.PASSWORDOBLIGATOIRE);
+
+                case AccountError.PasswordWrong:
+                    return new WSR_Result(CODERET_PASSWORDINCORECT, Properties.Resources.PASSWORDINCORECT);
+
+                default:
+                    return new WSR_Result(CODERET_EURREURINTERNESERVICE, Properties.Resources.EURREURINTERNESERVICE);
+            }
         }
 
         /// <summary>
@@ -107,7 +164,7 @@ namespace RDMService
         {
             string pseudo = null;
             string password = null;
-            Object data = null;
+            object data = null;
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
@@ -127,7 +184,29 @@ namespace RDMService
             {
                 return ret;
             }
-            return null;
+
+            AccountError err = Account.WriteData(pseudo, password, data);
+
+            switch (err)
+            {
+                case AccountError.Ok:
+                    return new WSR_Result(password, true);
+
+                case AccountError.KeyNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
+
+                case AccountError.keyNotFound:
+                    return new WSR_Result(CODERET_LOGOUT, Properties.Resources.LOGOUT);
+
+                case AccountError.PasswordNullOrEmpty:
+                    return new WSR_Result(CODERET_PASSWORDOBLIGATOIRE, Properties.Resources.PASSWORDOBLIGATOIRE);
+
+                case AccountError.PasswordWrong:
+                    return new WSR_Result(CODERET_PASSWORDINCORECT, Properties.Resources.PASSWORDINCORECT);
+
+                default:
+                    return new WSR_Result(CODERET_EURREURINTERNESERVICE, Properties.Resources.EURREURINTERNESERVICE);
+            }
         }
 
         /// <summary>
@@ -140,6 +219,7 @@ namespace RDMService
             string pseudo = null;
             string password = null;
             string pseudoDownload = null;
+            object data = null;
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
@@ -160,7 +240,34 @@ namespace RDMService
                 return ret;
             }
 
-            return null;
+            AccountError err = Account.ReadData(pseudo, password, pseudoDownload, out data);
+
+            switch (err)
+            {
+                case AccountError.Ok:
+                    return new WSR_Result(data, false);
+
+                case AccountError.KeyNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDOOBLIGATOIRE, Properties.Resources.PSEUDOOBLIGATOIRE);
+
+                case AccountError.keyNotFound:
+                    return new WSR_Result(CODERET_LOGOUT, Properties.Resources.LOGOUT);
+
+                case AccountError.keyDownloadNullOrEmpty:
+                    return new WSR_Result(CODERET_PSEUDODOWNLOADOBLIGATOIRE, Properties.Resources.PSEUDODOWNLOADLOGOUT);
+
+                case AccountError.keyDownloadNotFound:
+                    return new WSR_Result(CODERET_PSEUDODOWNLOADLOGOUT, Properties.Resources.PSEUDODOWNLOADLOGOUT);
+
+                case AccountError.PasswordNullOrEmpty:
+                    return new WSR_Result(CODERET_PASSWORDOBLIGATOIRE, Properties.Resources.PASSWORDOBLIGATOIRE);
+
+                case AccountError.PasswordWrong:
+                    return new WSR_Result(CODERET_PASSWORDINCORECT, Properties.Resources.PASSWORDINCORECT);
+
+                default:
+                    return new WSR_Result(CODERET_EURREURINTERNESERVICE, Properties.Resources.EURREURINTERNESERVICE);
+            }
         }
 
         #endregion

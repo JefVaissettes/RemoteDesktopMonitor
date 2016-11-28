@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EURREURINTERNESERVICE" xml:space="preserve">
+    <value>Erreur par défaut.</value>
+  </data>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>Pseudo et password obligatoire.</value>
+  </data>
   <data name="PARAMKEYINCONNU" xml:space="preserve">
     <value>Le paramètre de la clé {0} n'est pas connu.</value>
   </data>
   <data name="PARAMTYPEINVALID" xml:space="preserve">
     <value>Le type {0} de paramètre n'est pas valide.</value>
+  </data>
+  <data name="PASSWORDINCORECT" xml:space="preserve">
+    <value>Password incorect.</value>
+  </data>
+  <data name="PASSWORDOBLIGATOIRE" xml:space="preserve">
+    <value>Password obligatoire.</value>
+  </data>
+  <data name="PSEUDODOWNLOADLOGOUT" xml:space="preserve">
+    <value>Deconnexion pour la vision des data.</value>
+  </data>
+  <data name="PSEUDODOWNLOADOBLIGATOIRE" xml:space="preserve">
+    <value>Obligation de se connecter pour voir toutes les data de tous les pseudos.</value>
+  </data>
+  <data name="PSEUDOOBLIGATOIRE" xml:space="preserve">
+    <value>Le pseudo est obligatoire.</value>
+  </data>
+  <data name="PSEUDOUTILISE" xml:space="preserve">
+    <value>Le pseudo est déjà utilisé.</value>
   </data>
 </root>
