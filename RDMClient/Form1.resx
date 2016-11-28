@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ERREUR_APPELSERVICE" xml:space="preserve">
-    <value>Erreur appel du service.</value>
-  </data>
-  <data name="ERREUR_DESERIALISATIONRETOUR" xml:space="preserve">
-    <value>Erreur lors de la déserialisation des données.</value>
-  </data>
-  <data name="ERREUR_SERIALISATIONPARAMS" xml:space="preserve">
-    <value>Erreur des paramètres de sérialisation.</value>
-  </data>
-  <data name="ERREUR_SERIALISATIONRESULT" xml:space="preserve">
-    <value>Erreur lors de la sérialisation.</value>
-  </data>
-  <data name="ERREUR_TIMEOUT" xml:space="preserve">
-    <value>Le temps est écoulé, relancer votre application.</value>
-  </data>
-  <data name="SERIALISATION_JSON" xml:space="preserve">
-    <value>Sérialisation des données en Json.</value>
-  </data>
-  <data name="SERIALISATION_XML" xml:space="preserve">
-    <value>Sérialisation des données en Xml.</value>
-  </data>
 </root>

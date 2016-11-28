@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMService", "RDMService\RD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeWebServiceRest", "ConsumeWebServiceRest\ConsumeWebServiceRest.csproj", "{AC542465-5765-4489-8B98-4CFC7C7667B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMClient", "RDMClient\RDMClient.csproj", "{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
