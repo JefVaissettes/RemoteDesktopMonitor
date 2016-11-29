@@ -78,6 +78,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsumeWebServiceRest\ConsumeWebServiceRest.csproj">
+      <Project>{ac542465-5765-4489-8b98-4cfc7c7667b4}</Project>
+      <Name>ConsumeWebServiceRest</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

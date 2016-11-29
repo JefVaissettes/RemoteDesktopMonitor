@@ -33,17 +33,17 @@
             this.lblErreur = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelConnexion = new System.Windows.Forms.Panel();
+            this.btAnnuler = new System.Windows.Forms.Button();
+            this.btDeConnect = new System.Windows.Forms.Button();
+            this.btConnect = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPseudo = new System.Windows.Forms.TextBox();
             this.txtWebService = new System.Windows.Forms.TextBox();
-            this.btConnect = new System.Windows.Forms.Button();
-            this.btDeConnect = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBoxPseudoConnected = new System.Windows.Forms.ListBox();
-            this.panelConnexion = new System.Windows.Forms.Panel();
-            this.btAnnuler = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,7 +95,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(676, 259);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -108,31 +108,41 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 225);
+            this.panel2.Size = new System.Drawing.Size(332, 226);
             this.panel2.TabIndex = 2;
             // 
-            // txtPassword
+            // panelConnexion
             // 
-            this.txtPassword.Location = new System.Drawing.Point(98, 119);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(176, 20);
-            this.txtPassword.TabIndex = 8;
+            this.panelConnexion.Controls.Add(this.btAnnuler);
+            this.panelConnexion.Controls.Add(this.btDeConnect);
+            this.panelConnexion.Controls.Add(this.btConnect);
+            this.panelConnexion.Location = new System.Drawing.Point(6, 164);
+            this.panelConnexion.Name = "panelConnexion";
+            this.panelConnexion.Size = new System.Drawing.Size(323, 48);
+            this.panelConnexion.TabIndex = 9;
             // 
-            // txtPseudo
+            // btAnnuler
             // 
-            this.txtPseudo.Location = new System.Drawing.Point(98, 77);
-            this.txtPseudo.Name = "txtPseudo";
-            this.txtPseudo.Size = new System.Drawing.Size(176, 20);
-            this.txtPseudo.TabIndex = 7;
+            this.btAnnuler.Location = new System.Drawing.Point(12, 12);
+            this.btAnnuler.Name = "btAnnuler";
+            this.btAnnuler.Size = new System.Drawing.Size(87, 23);
+            this.btAnnuler.TabIndex = 5;
+            this.btAnnuler.Text = "Annuler";
+            this.btAnnuler.UseVisualStyleBackColor = true;
+            this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
             // 
-            // txtWebService
+            // btDeConnect
             // 
-            this.txtWebService.Location = new System.Drawing.Point(98, 30);
-            this.txtWebService.Name = "txtWebService";
-            this.txtWebService.Size = new System.Drawing.Size(176, 20);
-            this.txtWebService.TabIndex = 6;
+            this.btDeConnect.Location = new System.Drawing.Point(119, 12);
+            this.btDeConnect.Name = "btDeConnect";
+            this.btDeConnect.Size = new System.Drawing.Size(87, 23);
+            this.btDeConnect.TabIndex = 4;
+            this.btDeConnect.Text = "Deconnecter";
+            this.btDeConnect.UseVisualStyleBackColor = true;
+            this.btDeConnect.Click += new System.EventHandler(this.btDeConnect_Click);
             // 
             // btConnect
             // 
@@ -144,15 +154,30 @@
             this.btConnect.UseVisualStyleBackColor = true;
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
-            // btDeConnect
+            // txtPassword
             // 
-            this.btDeConnect.Location = new System.Drawing.Point(119, 12);
-            this.btDeConnect.Name = "btDeConnect";
-            this.btDeConnect.Size = new System.Drawing.Size(87, 23);
-            this.btDeConnect.TabIndex = 4;
-            this.btDeConnect.Text = "Deconnecter";
-            this.btDeConnect.UseVisualStyleBackColor = true;
-            this.btDeConnect.Click += new System.EventHandler(this.btDeConnect_Click);
+            this.txtPassword.Location = new System.Drawing.Point(98, 119);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(176, 20);
+            this.txtPassword.TabIndex = 8;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            // 
+            // txtPseudo
+            // 
+            this.txtPseudo.Location = new System.Drawing.Point(98, 77);
+            this.txtPseudo.Name = "txtPseudo";
+            this.txtPseudo.Size = new System.Drawing.Size(176, 20);
+            this.txtPseudo.TabIndex = 7;
+            this.txtPseudo.TextChanged += new System.EventHandler(this.txtPseudo_TextChanged);
+            // 
+            // txtWebService
+            // 
+            this.txtWebService.Location = new System.Drawing.Point(98, 30);
+            this.txtWebService.Name = "txtWebService";
+            this.txtWebService.Size = new System.Drawing.Size(176, 20);
+            this.txtWebService.TabIndex = 6;
+            this.txtWebService.Text = "http://user12.2isa.org";
+            this.txtWebService.TextChanged += new System.EventHandler(this.txtWebService_TextChanged);
             // 
             // label4
             // 
@@ -183,31 +208,12 @@
             // 
             // listBoxPseudoConnected
             // 
+            this.listBoxPseudoConnected.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxPseudoConnected.FormattingEnabled = true;
             this.listBoxPseudoConnected.Location = new System.Drawing.Point(341, 3);
             this.listBoxPseudoConnected.Name = "listBoxPseudoConnected";
-            this.listBoxPseudoConnected.Size = new System.Drawing.Size(332, 225);
+            this.listBoxPseudoConnected.Size = new System.Drawing.Size(332, 226);
             this.listBoxPseudoConnected.TabIndex = 3;
-            // 
-            // panelConnexion
-            // 
-            this.panelConnexion.Controls.Add(this.btAnnuler);
-            this.panelConnexion.Controls.Add(this.btDeConnect);
-            this.panelConnexion.Controls.Add(this.btConnect);
-            this.panelConnexion.Location = new System.Drawing.Point(6, 164);
-            this.panelConnexion.Name = "panelConnexion";
-            this.panelConnexion.Size = new System.Drawing.Size(323, 48);
-            this.panelConnexion.TabIndex = 9;
-            // 
-            // btAnnuler
-            // 
-            this.btAnnuler.Location = new System.Drawing.Point(12, 12);
-            this.btAnnuler.Name = "btAnnuler";
-            this.btAnnuler.Size = new System.Drawing.Size(87, 23);
-            this.btAnnuler.TabIndex = 5;
-            this.btAnnuler.Text = "Annuler";
-            this.btAnnuler.UseVisualStyleBackColor = true;
-            this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
             // 
             // FormMain
             // 
