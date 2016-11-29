@@ -79,9 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsumeWebServiceRest\ConsumeWebServiceRest.csproj">
-      <Project>{ac542465-5765-4489-8b98-4cfc7c7667b4}</Project>
-      <Name>ConsumeWebServiceRest</Name>
+    <ProjectReference Include="..\RDMDALWSR\RDMDALWSR.csproj">
+      <Project>{8982ac97-d710-4f86-9ab9-e682d2f55e7f}</Project>
+      <Name>RDMDALWSR</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
