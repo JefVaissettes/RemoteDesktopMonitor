@@ -156,6 +156,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(98, 119);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(176, 20);
@@ -214,6 +215,8 @@
             this.listBoxPseudoConnected.Name = "listBoxPseudoConnected";
             this.listBoxPseudoConnected.Size = new System.Drawing.Size(332, 226);
             this.listBoxPseudoConnected.TabIndex = 3;
+            this.listBoxPseudoConnected.DoubleClick += new System.EventHandler(this.listBoxPseudoConnected_DoubleClick);
+            this.listBoxPseudoConnected.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBoxPseudoConnected_KeyPress);
             // 
             // FormMain
             // 
@@ -224,6 +227,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormMain";
             this.Text = "Remote Desktop Monitor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

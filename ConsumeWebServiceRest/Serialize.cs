@@ -54,15 +54,6 @@ namespace ConsumeWebServiceRest
                 return null;
             }
         }
-
-        //public void Add(string key, object value)
-        //{
-        //    if (value == null)
-        //    {
-        //        dicParams.Add(key, new string[2] { Serialize.SerializeToString(value), value.GetType().AssemblyQualifiedName }; }
-        //    }
-        //}
-    }
-     
+    }     
 }
 

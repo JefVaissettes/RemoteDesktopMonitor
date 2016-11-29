@@ -12,11 +12,11 @@ namespace RDMDALWSR
     {
         public const int CodeRet_RDMService_Logout = 4;
 
-        private const string ADR_LOGIN = "service.svc/Login";
-        private const string ADR_LOGOUT = "service.svc/Logout";
-        private const string ADR_GETPSEUDOS = "service.svc/GetPseudos";
-        private const string ADR_UPLOADDATAS = "service.svc/UploadData";
-        private const string ADR_DOWNLOADDATAS = "service.svc/DownloadData";
+        private const string ADR_LOGIN = "serviceRDM.svc/Login";
+        private const string ADR_LOGOUT = "serviceRDM.svc/Logout";
+        private const string ADR_GETPSEUDOS = "serviceRDM.svc/GetPseudos";
+        private const string ADR_UPLOADDATAS = "serviceRDM.svc/UploadData";
+        private const string ADR_DOWNLOADDATAS = "serviceRDM.svc/DownloadData";
 
         private string _stringConnect = String.Empty;
         private string _pseudoConnect = String.Empty;

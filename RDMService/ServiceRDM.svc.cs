@@ -74,16 +74,13 @@ namespace RDMService
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
-            if (ret != null)
-            {
-                return ret;
-            }
+            if (ret != null)            
+                return ret;            
 
             ret = VerifParamType(p, "password", out password);
-            if (ret != null)
-            {
+            if (ret != null)            
                 return ret;
-            }
+            
             AccountError err = Account.Remove(pseudo,password);
 
             switch (err)
@@ -121,16 +118,13 @@ namespace RDMService
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
-            if (ret != null)
-            {
+            if (ret != null)            
                 return ret;
-            }
-
+            
             ret = VerifParamType(p, "password", out password);
-            if (ret != null)
-            {
+            if (ret != null)            
                 return ret;
-            }
+            
             AccountError err = Account.GetKeys(pseudo, password, out listPseudos);
 
             switch (err)
