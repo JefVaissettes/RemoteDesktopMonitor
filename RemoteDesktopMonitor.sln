@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMDallWSR", "RDMDallWSR\RDMDallWSR.csproj", "{39FC753D-070B-443C-9C7C-C4F5B8463D6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMDalWSR", "RDMDallWSR\RDMDalWSR.csproj", "{39FC753D-070B-443C-9C7C-C4F5B8463D6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMService", "RDMService\RDMService.csproj", "{2B5354AB-DCB0-4488-ACBF-9AD527483BB3}"
 EndProject
