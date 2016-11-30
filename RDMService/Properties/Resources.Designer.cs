@@ -61,25 +61,16 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur par défaut..
+        ///   Recherche une chaîne localisée semblable à une erreur interne du service s&apos;est produite.
         /// </summary>
-        internal static string EURREURINTERNESERVICE {
+        internal static string ERREURINTERNESERVICE {
             get {
-                return ResourceManager.GetString("EURREURINTERNESERVICE", resourceCulture);
+                return ResourceManager.GetString("ERREURINTERNESERVICE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Pseudo et password obligatoire..
-        /// </summary>
-        internal static string LOGOUT {
-            get {
-                return ResourceManager.GetString("LOGOUT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le paramètre de la clé {0} n&apos;est pas connu..
+        ///   Recherche une chaîne localisée semblable à il manque le paramètre : &apos;{0}&apos;.
         /// </summary>
         internal static string PARAMKEYINCONNU {
             get {
@@ -88,7 +79,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le type {0} de paramètre n&apos;est pas valide..
+        ///   Recherche une chaîne localisée semblable à Le type du paramètre &apos;{0}&apos; est invalide.
         /// </summary>
         internal static string PARAMTYPEINVALID {
             get {
@@ -97,16 +88,16 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Password incorect..
+        ///   Recherche une chaîne localisée semblable à le mot de passe est incorrect.
         /// </summary>
-        internal static string PASSWORDINCORECT {
+        internal static string PASSWORDINCORRECT {
             get {
-                return ResourceManager.GetString("PASSWORDINCORECT", resourceCulture);
+                return ResourceManager.GetString("PASSWORDINCORRECT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Password obligatoire..
+        ///   Recherche une chaîne localisée semblable à le mot de passe est obligatoire.
         /// </summary>
         internal static string PASSWORDOBLIGATOIRE {
             get {
@@ -115,16 +106,25 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Deconnexion pour la vision des data..
+        ///   Recherche une chaîne localisée semblable à Vous êtes dèja logué.
         /// </summary>
-        internal static string PSEUDODOWNLOADLOGOUT {
+        internal static string PSEUDODEJALOGUE {
             get {
-                return ResourceManager.GetString("PSEUDODOWNLOADLOGOUT", resourceCulture);
+                return ResourceManager.GetString("PSEUDODEJALOGUE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Obligation de se connecter pour voir toutes les data de tous les pseudos..
+        ///   Recherche une chaîne localisée semblable à le pseudo {0} n&apos;est pas logué.
+        /// </summary>
+        internal static string PSEUDODOWNLOADNONLOGUE {
+            get {
+                return ResourceManager.GetString("PSEUDODOWNLOADNONLOGUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le pseudo download est obligatoire.
         /// </summary>
         internal static string PSEUDODOWNLOADOBLIGATOIRE {
             get {
@@ -133,7 +133,16 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le pseudo est obligatoire..
+        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes pas logué.
+        /// </summary>
+        internal static string PSEUDONONLOGUE {
+            get {
+                return ResourceManager.GetString("PSEUDONONLOGUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à le pseudo est obligatoire !.
         /// </summary>
         internal static string PSEUDOOBLIGATOIRE {
             get {
@@ -142,7 +151,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le pseudo est déjà utilisé..
+        ///   Recherche une chaîne localisée semblable à Ce pseudo est déjà utilisé par un autre utilisateur, veuillez trouvez un autre pseudo!.
         /// </summary>
         internal static string PSEUDOUTILISE {
             get {

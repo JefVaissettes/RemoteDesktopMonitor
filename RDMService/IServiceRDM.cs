@@ -9,9 +9,11 @@ using System.Text;
 
 namespace RDMService
 {
+    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "IService1" à la fois dans le code et le fichier de configuration.
     [ServiceContract]
     public interface IServiceRDM
     {
+
         [OperationContract]
         [WebInvoke(UriTemplate = "Login", Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         WSR_Result Login(WSR_Params p);
@@ -21,7 +23,7 @@ namespace RDMService
         WSR_Result Logout(WSR_Params p);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "GetPseudos", Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebInvoke(UriTemplate = "GetPseudos", Method = "POST", RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Bare)]
         WSR_Result GetPseudos(WSR_Params p);
 
         [OperationContract]
