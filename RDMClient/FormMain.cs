@@ -22,7 +22,7 @@ namespace RDMClient
         {
             InitializeComponent();
 
-            //_rdmDAL.StringConnect = txtWebService.Text;
+            _rdmDAL.StringConnect = txtWebService.Text;
 
             _rdmDAL.StringConnect = ADR_SERVICE_DEBUG;
         }
