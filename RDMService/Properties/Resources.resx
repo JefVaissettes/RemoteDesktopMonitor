@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ERREURINTERNESERVICE" xml:space="preserve">
-    <value>une erreur interne du service s'est produite</value>
+    <value>Erreur interne du service</value>
   </data>
   <data name="PARAMKEYINCONNU" xml:space="preserve">
-    <value>il manque le paramètre : '{0}'</value>
+    <value>Il manque le paramètre : {0}</value>
   </data>
   <data name="PARAMTYPEINVALID" xml:space="preserve">
     <value>Le type du paramètre '{0}' est invalide</value>
   </data>
   <data name="PASSWORDINCORRECT" xml:space="preserve">
-    <value>le mot de passe est incorrect</value>
+    <value>Le mot de passe est incorrect</value>
   </data>
   <data name="PASSWORDOBLIGATOIRE" xml:space="preserve">
-    <value>le mot de passe est obligatoire</value>
+    <value>Le mot de passe est obligatoire</value>
   </data>
   <data name="PSEUDODEJALOGUE" xml:space="preserve">
     <value>Vous êtes dèja logué</value>
@@ -145,9 +145,9 @@
     <value>Vous n'êtes pas logué</value>
   </data>
   <data name="PSEUDOOBLIGATOIRE" xml:space="preserve">
-    <value>le pseudo est obligatoire !</value>
+    <value>Le pseudo est obligatoire</value>
   </data>
   <data name="PSEUDOUTILISE" xml:space="preserve">
-    <value>Ce pseudo est déjà utilisé par un autre utilisateur, veuillez trouvez un autre pseudo!</value>
+    <value>Ce pseudo est dèja utilisé</value>
   </data>
 </root>

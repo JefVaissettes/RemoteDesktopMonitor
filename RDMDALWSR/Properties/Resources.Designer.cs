@@ -80,7 +80,7 @@ namespace RDMDALWSR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le pseudo download est obligatoire.
+        ///   Recherche une chaîne localisée semblable à Le pseudo download est obligatoire..
         /// </summary>
         internal static string PSEUDODOWNLOADOBLIGATOIRE {
             get {
@@ -89,7 +89,7 @@ namespace RDMDALWSR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes pas logué.
+        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes pas connecté..
         /// </summary>
         internal static string PSEUDONONLOGUE {
             get {
@@ -98,7 +98,7 @@ namespace RDMDALWSR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le pseudo est obligatoire.
+        ///   Recherche une chaîne localisée semblable à Le pseudo est obligatoire..
         /// </summary>
         internal static string PSEUDOOBLIGATOIRE {
             get {

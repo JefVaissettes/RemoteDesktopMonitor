@@ -61,7 +61,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à une erreur interne du service s&apos;est produite.
+        ///   Recherche une chaîne localisée semblable à Erreur interne du service.
         /// </summary>
         internal static string ERREURINTERNESERVICE {
             get {
@@ -70,7 +70,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à il manque le paramètre : &apos;{0}&apos;.
+        ///   Recherche une chaîne localisée semblable à Il manque le paramètre : {0}.
         /// </summary>
         internal static string PARAMKEYINCONNU {
             get {
@@ -88,7 +88,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à le mot de passe est incorrect.
+        ///   Recherche une chaîne localisée semblable à Le mot de passe est incorrect.
         /// </summary>
         internal static string PASSWORDINCORRECT {
             get {
@@ -97,7 +97,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à le mot de passe est obligatoire.
+        ///   Recherche une chaîne localisée semblable à Le mot de passe est obligatoire.
         /// </summary>
         internal static string PASSWORDOBLIGATOIRE {
             get {
@@ -142,7 +142,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à le pseudo est obligatoire !.
+        ///   Recherche une chaîne localisée semblable à Le pseudo est obligatoire.
         /// </summary>
         internal static string PSEUDOOBLIGATOIRE {
             get {
@@ -151,7 +151,7 @@ namespace RDMService.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ce pseudo est déjà utilisé par un autre utilisateur, veuillez trouvez un autre pseudo!.
+        ///   Recherche une chaîne localisée semblable à Ce pseudo est dèja utilisé.
         /// </summary>
         internal static string PSEUDOUTILISE {
             get {

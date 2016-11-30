@@ -12,8 +12,8 @@ namespace RDMService
     // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "Service1" dans le code, le fichier svc et le fichier de configuration.
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service : IServiceRDM
-
-    {// PLAGE DES CODES ERREUR POUR LE WebService ---> [1 - 200[
+    {
+        // PLAGE DES CODES ERREUR POUR LE WebService ---> [1 - 200[
         public const int CodeRet_Ok = 0;
         public const int CodeRet_PseudoUtilise = 1;
         public const int CodeRet_PseudoObligatoire = 2;
@@ -38,33 +38,24 @@ namespace RDMService
             string pseudo = null;
             string password = null;
             WSR_Result ret = null;
+
             ret = VerifParamType(p, "pseudo", out pseudo);
             if (ret != null)
-            {
                 return ret;
-            }
 
-            //permet d'ajouter un compte  utilisateur dans la mémoire cache, 
             AccountError err = Account.Add(pseudo, out password);
+
             switch (err)
             {
-                //si ok , la base nous envoie un password automatiquement.
                 case AccountError.Ok:
                     return new WSR_Result(password, true);
-
-                //on crée un compte utilisateur avec un pseudo obligatoire, obligé de taper un pseudo
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoObligatoire, Properties.Resources.PSEUDOOBLIGATOIRE);
-
-                //si le speudo existe déjà, il est déjà utilisé on nous renvoi un message d'erreur et on diot retapé un autre pseudo
                 case AccountError.KeyExist:
                     return new WSR_Result(CodeRet_PseudoUtilise, Properties.Resources.PSEUDOUTILISE);
-
                 default:
                     return new WSR_Result(CodeRet_ErreurInterneService, Properties.Resources.ERREURINTERNESERVICE);
             }
-
-
 
         }
 
@@ -81,40 +72,29 @@ namespace RDMService
 
             ret = VerifParamType(p, "pseudo", out pseudo);
             if (ret != null)
-            {
                 return ret;
-            }
-
 
             ret = VerifParamType(p, "password", out password);
             if (ret != null)
-            {
                 return ret;
-            }
 
-            //permet de supprimer un compte dans la mémoire cache
             AccountError err = Account.Remove(pseudo, password);
 
             switch (err)
             {
                 case AccountError.Ok:
                     return new WSR_Result();
-
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoObligatoire, Properties.Resources.PSEUDOOBLIGATOIRE);
-
                 case AccountError.PasswordNullOrEmpty:
                     return new WSR_Result(CodeRet_PasswordObligatoire, Properties.Resources.PASSWORDOBLIGATOIRE);
-
-                case AccountError.PasswordWrong:
-                    return new WSR_Result(CodeRet_PasswordIncorrect, Properties.Resources.PASSWORDINCORRECT);
-
                 case AccountError.keyNotFound:
                     return new WSR_Result(CodeRet_Logout, Properties.Resources.PSEUDONONLOGUE);
+                case AccountError.PasswordWrong:
+                    return new WSR_Result(CodeRet_PasswordIncorrect, Properties.Resources.PASSWORDINCORRECT);
                 default:
                     return new WSR_Result(CodeRet_ErreurInterneService, Properties.Resources.ERREURINTERNESERVICE);
             }
-
         }
 
         /// <summary>
@@ -131,40 +111,29 @@ namespace RDMService
 
             ret = VerifParamType(p, "pseudo", out pseudo);
             if (ret != null)
-            {
                 return ret;
-            }
 
             ret = VerifParamType(p, "password", out password);
             if (ret != null)
-            {
                 return ret;
-            }
-            //permet de connaître la liste des comptes utilisateurs stockés dans la mémoire cache
+
             AccountError err = Account.GetKeys(pseudo, password, out lstKeys);
 
             switch (err)
             {
                 case AccountError.Ok:
                     return new WSR_Result(lstKeys, true);
-
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoObligatoire, Properties.Resources.PSEUDOOBLIGATOIRE);
-
                 case AccountError.PasswordNullOrEmpty:
                     return new WSR_Result(CodeRet_PasswordObligatoire, Properties.Resources.PASSWORDOBLIGATOIRE);
-
                 case AccountError.keyNotFound:
                     return new WSR_Result(CodeRet_Logout, Properties.Resources.PSEUDONONLOGUE);
-
                 case AccountError.PasswordWrong:
                     return new WSR_Result(CodeRet_PasswordIncorrect, Properties.Resources.PASSWORDINCORRECT);
-
                 default:
                     return new WSR_Result(CodeRet_ErreurInterneService, Properties.Resources.ERREURINTERNESERVICE);
             }
-
-
         }
 
         /// <summary>
@@ -177,50 +146,37 @@ namespace RDMService
             string pseudo = null;
             string password = null;
             object data = null;
-
             WSR_Result ret = null;
 
             ret = VerifParamType(p, "pseudo", out pseudo);
             if (ret != null)
-            {
                 return ret;
-            }
 
             ret = VerifParamType(p, "password", out password);
             if (ret != null)
-            {
                 return ret;
-            }
-            ret = VerifParamType(p, "data", out data);//pas de vérification de paramètre
-            if (ret != null)
-            {
-                return ret;
-            }
 
-            //permet d'écrire les données dans le compte utilisateur spécifié
+            ret = VerifParamExist(p, "data", out data); // Pas de vérification de type. Les data sont stocké sous forme sérialisés. Pas besoin de connaître le type.
+            if (ret != null)
+                return ret;
+
             AccountError err = Account.WriteData(pseudo, password, data);
 
             switch (err)
             {
                 case AccountError.Ok:
                     return new WSR_Result();
-
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoObligatoire, Properties.Resources.PSEUDOOBLIGATOIRE);
-
                 case AccountError.PasswordNullOrEmpty:
                     return new WSR_Result(CodeRet_PasswordObligatoire, Properties.Resources.PASSWORDOBLIGATOIRE);
-
                 case AccountError.keyNotFound:
                     return new WSR_Result(CodeRet_Logout, Properties.Resources.PSEUDONONLOGUE);
-
                 case AccountError.PasswordWrong:
                     return new WSR_Result(CodeRet_PasswordIncorrect, Properties.Resources.PASSWORDINCORRECT);
-
                 default:
                     return new WSR_Result(CodeRet_ErreurInterneService, Properties.Resources.ERREURINTERNESERVICE);
             }
-
         }
 
         /// <summary>
@@ -248,32 +204,24 @@ namespace RDMService
             if (ret != null)
                 return ret;
 
-            //permet de lire les données dans un compte utilisateur spécifié
             AccountError err = Account.ReadData(pseudo, password, pseudoDownload, out data);
 
             switch (err)
             {
                 case AccountError.Ok:
                     return new WSR_Result(data, false);
-
                 case AccountError.KeyNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoObligatoire, Properties.Resources.PSEUDOOBLIGATOIRE);
-
                 case AccountError.PasswordNullOrEmpty:
                     return new WSR_Result(CodeRet_PasswordObligatoire, Properties.Resources.PASSWORDOBLIGATOIRE);
-
                 case AccountError.keyDownloadNullOrEmpty:
                     return new WSR_Result(CodeRet_PseudoDownloadObligatoire, Properties.Resources.PSEUDODOWNLOADOBLIGATOIRE);
-
                 case AccountError.keyNotFound:
                     return new WSR_Result(CodeRet_Logout, Properties.Resources.PSEUDONONLOGUE);
-
                 case AccountError.PasswordWrong:
                     return new WSR_Result(CodeRet_PasswordIncorrect, Properties.Resources.PASSWORDINCORRECT);
-
                 case AccountError.keyDownloadNotFound:
                     return new WSR_Result(CodeRet_PseudoDownloadLogout, String.Format(Properties.Resources.PSEUDODOWNLOADNONLOGUE, pseudoDownload));
-
                 default:
                     return new WSR_Result(CodeRet_ErreurInterneService, Properties.Resources.ERREURINTERNESERVICE);
             }
@@ -282,14 +230,7 @@ namespace RDMService
         #endregion IService Membres
 
         #region Fonctions perso
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T">Type</typeparam>
-        /// <param name="p">Le parametre</param>
-        /// <param name="key">La clé</param>
-        /// <param name="value">La valeur</param>
-        /// <returns></returns>
+
         private static WSR_Result VerifParamExist(WSR_Params p, string key, out object data)
         {
             data = null;
