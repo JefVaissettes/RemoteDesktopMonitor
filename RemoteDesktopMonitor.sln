@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeWebServiceRest", "ConsumeWebServiceRest\ConsumeWebServiceRest.csproj", "{AC542465-5765-4489-8B98-4CFC7C7667B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeWebServiceRest", "ConsumeWebServiceRest\ConsumeWebServiceRest.csproj", "{BCBE9432-E1C2-4064-8295-E0DC82C43063}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMClient", "RDMClient\RDMClient.csproj", "{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMDALWSR", "RDMDALWSR\RDMDALWSR.csproj", "{8982AC97-D710-4F86-9AB9-E682D2F55E7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMDALWSR", "RDMDALWSR\RDMDALWSR.csproj", "{081E97D3-6CA3-4ED7-B790-F913DDD1D2A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMService", "RDMService\RDMService.csproj", "{0B254DC8-39F8-4118-8E25-7E9A826BC72C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDMService", "RDMService\RDMService.csproj", "{6347770C-4F4A-4173-A2A8-83FF1D70A665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC542465-5765-4489-8B98-4CFC7C7667B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBE9432-E1C2-4064-8295-E0DC82C43063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBE9432-E1C2-4064-8295-E0DC82C43063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBE9432-E1C2-4064-8295-E0DC82C43063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBE9432-E1C2-4064-8295-E0DC82C43063}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56CB46EB-9533-499E-B43F-E0B9CB44B5D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8982AC97-D710-4F86-9AB9-E682D2F55E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8982AC97-D710-4F86-9AB9-E682D2F55E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8982AC97-D710-4F86-9AB9-E682D2F55E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8982AC97-D710-4F86-9AB9-E682D2F55E7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B254DC8-39F8-4118-8E25-7E9A826BC72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B254DC8-39F8-4118-8E25-7E9A826BC72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B254DC8-39F8-4118-8E25-7E9A826BC72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B254DC8-39F8-4118-8E25-7E9A826BC72C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{081E97D3-6CA3-4ED7-B790-F913DDD1D2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081E97D3-6CA3-4ED7-B790-F913DDD1D2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081E97D3-6CA3-4ED7-B790-F913DDD1D2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081E97D3-6CA3-4ED7-B790-F913DDD1D2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6347770C-4F4A-4173-A2A8-83FF1D70A665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6347770C-4F4A-4173-A2A8-83FF1D70A665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6347770C-4F4A-4173-A2A8-83FF1D70A665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6347770C-4F4A-4173-A2A8-83FF1D70A665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

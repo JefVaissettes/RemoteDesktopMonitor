@@ -1,5 +1,4 @@
-﻿using RDMDALWSR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,91 +8,105 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RDMDALWSR;
+
 
 namespace RDMClient
-{
+{//TODO
+
     public partial class FormMain : Form
     {
+        
         internal const string ADR_SERVICE_DEBUG = "http://localhost:60078/";
 
         private RdmDalWSR _rdmDal = new RdmDalWSR();
+
         public FormMain()
         {
             InitializeComponent();
+
+            // On fixe l'adresse de base du service Web
+            //_rdmDal.StringConnect = txtboxWebService.Text;
+
+            // On fixe l'adresse de base du service Web en mode Debug (exécution du service en local)
             _rdmDal.StringConnect = ADR_SERVICE_DEBUG;
+
         }
 
-        #region "Texte Changed"
 
-        private void txtWebService_TextChanged(object sender, EventArgs e)
-        {
-            _rdmDal.StringConnect = txtWebService.Text;
-        }
-
-        private void txtPseudo_TextChanged(object sender, EventArgs e)
-        {
-            _rdmDal.PseudoConnect = txtPseudo.Text;
-            btConnect.Enabled = (!String.IsNullOrWhiteSpace(txtPseudo.Text));
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            btDeConnect.Enabled = (!String.IsNullOrWhiteSpace(txtPassword.Text));
-        }
-        #endregion
-
-
-        #region "Evenement click"
-
+        
         private async void btConnect_Click(object sender, EventArgs e)
         {
-            panelConnexion.Enabled = false;
+            btConnect.Enabled = false;
+            btDeconnect.Enabled = false;
+
             RdmDalWSRResult ret = await _rdmDal.LoginAsync(CancellationToken.None);
 
             if (ret.IsSuccess)
             {
-                txtWebService.Enabled = false;
-                txtPseudo.Enabled = false;
-                txtPassword.Text = (string)ret.Data;
-                lblErreur.Text = "Vous êtes connecté";
+                txtboxWebService.Enabled = false;
+                txtboxPseudo.Enabled = false;
+                txtboxPassword.Text = (string) ret.Data;
+                lbError.Text = "Vous êtes connecté";
             }
             else
             {
-                lblErreur.Text = ret.ErrorMessage;
+                lbError.Text = ret.ErrorMessage;
             }
-            panelConnexion.Enabled = true;
+
+            btConnect.Enabled = true;
+            btDeconnect.Enabled = true;
+
         }
 
-        private async void btDeConnect_Click(object sender, EventArgs e)
+        private async void btDeconnect_Click(object sender, EventArgs e)
         {
-            panelConnexion.Enabled = false;
+            btConnect.Enabled = false;
+            btDeconnect.Enabled = false;
+
             RdmDalWSRResult ret = await _rdmDal.LogoutAsync(CancellationToken.None);
 
+       
             if (ret.IsSuccess)
             {
-                lblErreur.Text = "Vous n'êtes pas connecté";
+                
+                lbError.Text = "Vous n'êtes pas connecté";
             }
             else
             {
-                lblErreur.Text = "Vous n'êtes pas connecté" + ret.ErrorMessage;
+                lbError.Text = "Vous n'êtes pas connecté" + ret.ErrorMessage;
             }
-            panelConnexion.Enabled = true;
-            listBoxPseudoConnected.Items.Clear();
-            txtWebService.Enabled = true;
-            txtPseudo.Enabled = true;
-            txtPassword.Text = String.Empty;
+
+            btConnect.Enabled = true;
+            btDeconnect.Enabled = true;
+           
+            lstbPseudos.Items.Clear();
+            txtboxWebService.Enabled = true;
+            txtboxPseudo.Enabled = true;
+            txtboxPassword.Text = String.Empty;
+            
         }
 
-        /// <summary>
-        /// Bouton annuler pour sortir
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btAnnuler_Click(object sender, EventArgs e)
+        private void txtboxWebService_TextChanged(object sender, EventArgs e)
         {
-            this.Close();
+            _rdmDal.StringConnect = txtboxWebService.Text;
         }
 
-        #endregion       
+        private void txtboxPassword_TextChanged(object sender, EventArgs e)
+        {
+            btDeconnect.Enabled = (!String.IsNullOrWhiteSpace(txtboxPassword.Text));
+             
+        }
+
+        private void txtboxPseudo_TextChanged(object sender, EventArgs e)
+        {
+            _rdmDal.PseudoConnect = txtboxPseudo.Text;
+            btConnect.Enabled = (!String.IsNullOrWhiteSpace(txtboxPseudo.Text));
+
+        }
+
+
+       
+
     }
 }

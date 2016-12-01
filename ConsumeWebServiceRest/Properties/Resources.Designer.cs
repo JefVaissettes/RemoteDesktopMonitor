@@ -62,7 +62,7 @@ namespace ConsumeWebServiceRest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur appel du service..
+        ///   Recherche une chaîne localisée semblable à Erreur d&apos;accès au service : {0}.
         /// </summary>
         internal static string ERREUR_APPELSERVICE {
             get {
@@ -71,7 +71,7 @@ namespace ConsumeWebServiceRest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur lors de la déserialisation des données..
+        ///   Recherche une chaîne localisée semblable à Erreur de désérialisation du résultat.
         /// </summary>
         internal static string ERREUR_DESERIALISATIONRETOUR {
             get {
@@ -80,7 +80,7 @@ namespace ConsumeWebServiceRest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur des paramètres de sérialisation..
+        ///   Recherche une chaîne localisée semblable à Erreur de sérialisation des paramètres.
         /// </summary>
         internal static string ERREUR_SERIALISATIONPARAMS {
             get {
@@ -89,7 +89,7 @@ namespace ConsumeWebServiceRest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur lors de la sérialisation..
+        ///   Recherche une chaîne localisée semblable à Erreur de sérialisation de la valeur de retour : {0}.
         /// </summary>
         internal static string ERREUR_SERIALISATIONRESULT {
             get {
@@ -98,7 +98,7 @@ namespace ConsumeWebServiceRest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le temps est écoulé, relancer votre application..
+        ///   Recherche une chaîne localisée semblable à Appel du service {0} annulé.
         /// </summary>
         internal static string ERREUR_TIMEOUT {
             get {

@@ -1,22 +1,22 @@
-﻿using ConsumeWebServiceRest;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using ConsumeWebServiceRest;
 
 namespace RDMDALWSR
 {
+    /// <summary>
+    /// Classe d'accès au webservice RDMService.
+    /// </summary>
     public class RdmDalWSR
     {
         public const int CodeRet_RDMService_Logout = 4;
 
-        private const string ADR_LOGIN = "service.svc/Login";
-        private const string ADR_LOGOUT = "service.svc/Logout";
-        private const string ADR_GETPSEUDOS = "service.svc/GetPseudos";
-        private const string ADR_UPLOADDATAS = "service.svc/UploadData";
-        private const string ADR_DOWNLOADDATAS = "service.svc/DownloadData";
+        private const string ADR_LOGIN = "ServiceRDM.svc/Login";
+        private const string ADR_LOGOUT = "ServiceRDM.svc/Logout";
+        private const string ADR_GETPSEUDOS = "ServiceRDM.svc/GetPseudos";
+        private const string ADR_UPLOADDATAS = "ServiceRDM.svc/UploadData";
+        private const string ADR_DOWNLOADDATAS = "ServiceRDM.svc/DownloadData";
 
         private string _stringConnect = String.Empty;
         private string _pseudoConnect = String.Empty;
@@ -26,23 +26,15 @@ namespace RDMDALWSR
 
         #region Constructeurs
 
-        /// <summary>
-        /// Constructeur par défaut
-        /// </summary>
         public RdmDalWSR() { }
 
-        /// <summary>
-        /// Constructeur avec adresse webservice et pseudo
-        /// </summary>
-        /// <param name="stringConnect"></param>
-        /// <param name="pseudoConnect"></param>
         public RdmDalWSR(string stringConnect, string pseudoConnect)
         {
             _stringConnect = stringConnect;
             _pseudoConnect = pseudoConnect;
         }
 
-        #endregion
+        #endregion Constructeurs
 
         #region Propriétés
 
@@ -108,7 +100,7 @@ namespace RDMDALWSR
             }
         }
 
-        #endregion
+        #endregion Propriétés
 
         #region Méthodes
 
@@ -316,6 +308,7 @@ namespace RDMDALWSR
             return new RdmDalWSRResult(ret);
         }
 
-        #endregion
+        #endregion Méthodes
     }
 }
+

@@ -1,6 +1,4 @@
-﻿using RDMService;
-using RDMService.Mémoire_partagée;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
@@ -9,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RDMService
 {
+
     /// <summary>
     /// Codes erreurs retournés par la classeAccount
     /// </summary>
@@ -24,6 +23,15 @@ namespace RDMService
         PasswordWrong = 21,
     }
 
+    /// <summary>
+    /// 
+    /// Cette classe permet de manipuler un objet de type MemoryCache. Tous les accès à MemoryCache sont thread safe, donc pas besoin de verrous pour accèder et
+    /// mettre à jour les données. Pour tous les accès il faut fournir un identifiant, c'est la clé du compte utilisateur stocké. Si le compte n'est pas accédé
+    /// en lecture ou en écriture durant une certaine période (ici 60s), il est détruit. Ceci permet de ne pas conserver des données inutiles en memoire.
+    /// 
+    /// Seul le propriétaire d'un compte peut écrire dessus. Par contre la lecture est ouverte à tous les utilisateur logués
+    /// 
+    /// </summary>
     public static class Account
     {
         private const string NOM_MEMACCOUNTS = "SharedMemoryAccounts";
@@ -242,5 +250,6 @@ namespace RDMService
         }
 
         #endregion Evenements MemoryCache
+
     }
 }

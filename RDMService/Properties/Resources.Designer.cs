@@ -63,99 +63,99 @@ namespace RDMService.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur interne du service.
         /// </summary>
-        internal static string ERREURINTERNESERVICE {
+        internal static string ErreurInterneService {
             get {
-                return ResourceManager.GetString("ERREURINTERNESERVICE", resourceCulture);
+                return ResourceManager.GetString("ErreurInterneService", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Il manque le paramètre : {0}.
         /// </summary>
-        internal static string PARAMKEYINCONNU {
+        internal static string ParamKeyInconnu {
             get {
-                return ResourceManager.GetString("PARAMKEYINCONNU", resourceCulture);
+                return ResourceManager.GetString("ParamKeyInconnu", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le type du paramètre &apos;{0}&apos; est invalide.
         /// </summary>
-        internal static string PARAMTYPEINVALID {
+        internal static string ParamTypeInvalid {
             get {
-                return ResourceManager.GetString("PARAMTYPEINVALID", resourceCulture);
+                return ResourceManager.GetString("ParamTypeInvalid", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le mot de passe est incorrect.
         /// </summary>
-        internal static string PASSWORDINCORRECT {
+        internal static string PasswordIncorrect {
             get {
-                return ResourceManager.GetString("PASSWORDINCORRECT", resourceCulture);
+                return ResourceManager.GetString("PasswordIncorrect", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le mot de passe est obligatoire.
         /// </summary>
-        internal static string PASSWORDOBLIGATOIRE {
+        internal static string PasswordObligatoire {
             get {
-                return ResourceManager.GetString("PASSWORDOBLIGATOIRE", resourceCulture);
+                return ResourceManager.GetString("PasswordObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous êtes dèja logué.
         /// </summary>
-        internal static string PSEUDODEJALOGUE {
+        internal static string PseudoDejaLogue {
             get {
-                return ResourceManager.GetString("PSEUDODEJALOGUE", resourceCulture);
+                return ResourceManager.GetString("PseudoDejaLogue", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à le pseudo {0} n&apos;est pas logué.
         /// </summary>
-        internal static string PSEUDODOWNLOADNONLOGUE {
+        internal static string PseudoDownloadNonLogue {
             get {
-                return ResourceManager.GetString("PSEUDODOWNLOADNONLOGUE", resourceCulture);
+                return ResourceManager.GetString("PseudoDownloadNonLogue", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le pseudo download est obligatoire.
         /// </summary>
-        internal static string PSEUDODOWNLOADOBLIGATOIRE {
+        internal static string PseudoDownloadObligatoire {
             get {
-                return ResourceManager.GetString("PSEUDODOWNLOADOBLIGATOIRE", resourceCulture);
+                return ResourceManager.GetString("PseudoDownloadObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes pas logué.
         /// </summary>
-        internal static string PSEUDONONLOGUE {
+        internal static string PseudoNonLogue {
             get {
-                return ResourceManager.GetString("PSEUDONONLOGUE", resourceCulture);
+                return ResourceManager.GetString("PseudoNonLogue", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Le pseudo est obligatoire.
         /// </summary>
-        internal static string PSEUDOOBLIGATOIRE {
+        internal static string PseudoObligatoire {
             get {
-                return ResourceManager.GetString("PSEUDOOBLIGATOIRE", resourceCulture);
+                return ResourceManager.GetString("PseudoObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Ce pseudo est dèja utilisé.
         /// </summary>
-        internal static string PSEUDOUTILISE {
+        internal static string PseudoUtilise {
             get {
-                return ResourceManager.GetString("PSEUDOUTILISE", resourceCulture);
+                return ResourceManager.GetString("PseudoUtilise", resourceCulture);
             }
         }
     }

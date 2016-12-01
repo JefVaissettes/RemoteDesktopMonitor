@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace ConsumeWebServiceRest
 {
-    public static class Serialize
+    static class Serialize
     {
         /// <summary>
         /// Méthode qui sérialize un 'object' en xml
@@ -54,6 +53,6 @@ namespace ConsumeWebServiceRest
                 return null;
             }
         }
-    }     
+    }
 }
 
