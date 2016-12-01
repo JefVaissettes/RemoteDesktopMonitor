@@ -54,15 +54,18 @@ namespace RDMClient
 
         private async void btConnecter_Click(object sender, EventArgs e)
         {
-            btConnect.Enabled = true;
-            btDeconnect.Enabled = false;
-            _rdmDal.PseudoConnect = txtPseudo.Text;
+            pnlConnexion.Enabled = false;
+            //btConnect.Enabled = true;
+            //btDeconnect.Enabled = false;
+
+            //_rdmDal.PseudoConnect = txtPseudo.Text;
+
             RdmDalWSRResult ret1 = await _rdmDal.LoginAsync(CancellationToken.None);
 
             if (ret1.IsSuccess)
             {
                 txtWebService.Enabled = false;
-                txtPseudo.Enabled = true;
+                txtPseudo.Enabled = false;
                 txtPassword.Text = (string)ret1.Data;
                 lblErreur.Text = "Vous êtes connecté";
             }
@@ -81,8 +84,10 @@ namespace RDMClient
             {
                 lblErreur.Text = ret2.ErrorMessage;
             }
-            btConnect.Enabled = false;
-            btDeconnect.Enabled = true;
+            //btConnect.Enabled = false;
+            //btDeconnect.Enabled = true;
+            pnlConnexion.Enabled = true;
+
         }
 
         private async void btDeconnecter_Click(object sender, EventArgs e)
